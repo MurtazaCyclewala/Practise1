@@ -10,7 +10,7 @@ app.config['MONGO_URI'] = 'mongodb://localhost:27017/Basic_auth'
 mongo = PyMongo(app)
 
 
-@app.route('/')
+@app.route('/index')
 def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
@@ -19,7 +19,7 @@ def index():
 
 
 @app.route('/signup', methods=['POST', 'GET'])
-def register():
+def signup():
     if request.method == 'POST':
         users = mongo.db.Mongo
         existing_user = users.find_one({'name' : request.form['username']})
@@ -35,6 +35,7 @@ def register():
     return render_template('signup.html')
 
 
+@app.route('/')
 @app.route('/login', methods=['POST'])
 def login():
     users = mongo.db.users
