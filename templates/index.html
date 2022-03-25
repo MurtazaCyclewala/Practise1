@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>
+            Login Page
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename = 'Login_style.css')}}" >
+    </head>
+    <body>
+        <h1>First Page</h1>
+        <ol>
+            <li>
+                <a href ="{{ url_for('login') }}">Login</a>
+            </li>
+            <li>
+                <a href ="{{ url_for('signup') }}">Signup</a>
+            </li>
+            <li>
+                <a href ="{{ url_for('login') }}">Upload</a>
+            </li>
+        </ol>
+    </body>
+</html>
