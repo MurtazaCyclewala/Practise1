@@ -20,7 +20,7 @@ def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('Login.html')
+    return render_template('index.html')
 
 
 @app.route('/signup', methods=['POST', 'GET'])
@@ -91,8 +91,5 @@ def display_image(filename):
     #print('display_image filename: ' + filename)
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
  
-
-
-
 if __name__ == "__main__":
     app.run(host = "localhost",port =5000,debug = True)
