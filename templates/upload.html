@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+            Upload
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename = 'upload_style.css')}}" >
+    </head>
+    <body style = "margin: auto;
+                    width: 30%;
+                    margin-top: 5%;
+                    background: linear-gradient(180deg, rgb(15, 243, 64), rgb(89, 233, 113))">
+        <form method="post" action="/" enctype="multipart/form-data">
+            <dl>
+                <p>
+                    <input type="file" name="file" class="form-control" autocomplete="off" required>
+                </p>
+            </dl>
+            <div>
+                <img src="{{ url_for('display_image', filename=filename) }}">
+            </div>
+    
+            <input style = "margin-left: 50%;" type="submit" value="Submit" class="btn btn-info" class="signbttn">
+            
+        </form>
+    </body>
+</html>

@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 from flask_pymongo import PyMongo
 import bcrypt
+import os
 
 app = Flask(__name__)
 
@@ -19,7 +20,7 @@ def index():
     if 'username' in session:
         return 'You are logged in as ' + session['username']
 
-    return render_template('signup.html')
+    return render_template('Login.html')
 
 
 @app.route('/signup', methods=['POST', 'GET'])
