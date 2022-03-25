@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>
+            SignUp Page
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename = 'SignUp_style.css')}}" >
+    </head>
+    <body style = "margin: auto;
+                    width: 30%;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                    background: linear-gradient(180deg, #0e12f0, rgb(68, 71, 196))">
+        <form action="{{ url_for('signup') }}" method=POST>
+            <div class="imgcontainer">
+              <img src="{{url_for('static',filename = 'SignUp.png')}}" class="avatar">
+            </div>
+          
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                <button type="submit">SignUp</button>
+                <label>
+                    <input type="checkbox"  name="remember"> Remember me
+                </label>
+            
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" class="signbttn" onclick= location.href="{{ url_for('login') }}"; >Already have an account</button>
+                </div>
+            </div>
+          </form>
+    </body>
+</html>
